@@ -97,7 +97,7 @@
 &lt 5 ESCAPE  &kp LEFT_WIN  &kp LEFT_ALT  &lt 3 LANG1  &lt 2 LANG2  &lt 1 SPACE           &kp BACKSPACE        &lt 1 ENTER                             &lt 5 BACKSLASH
             >;
 
-            sensor-bindings = <&inc_dec_kp K_SCROLL_DOWN K_SCROLL_UP>;
+            sensor-bindings = <&scroll_up_down>;
         };
 
         Fn-Cursor {
