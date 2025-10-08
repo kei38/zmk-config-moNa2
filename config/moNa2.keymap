@@ -65,6 +65,13 @@
             bindings = <&kp LEFT_WIN &kp LS(S)>;
             label = "SNIPPING_TOOL";
         };
+
+        close_quote: close_quote {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp SINGLE_QUOTE &kp SINGLE_QUOTE &kp LEFT>;
+            label = "CLOSE_QUOTE";
+        };
     };
 
     behaviors {
@@ -77,12 +84,13 @@
             tapping-term-ms = <200>;
         };
 
-        scroll_up_down: behavior_sensor_rotate_mouse_wheel_up_down {
+        scroll_up_down: behavior_sensor_rotate_ms_wheel {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
-            bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
+            bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
 
             tap-ms = <20>;
+            label = "scroll";
         };
     };
 
@@ -92,7 +100,7 @@
         default_layer {
             bindings = <
 &kp Q         &kp W         &kp E         &kp R      &kp T                                                 &kp Y        &kp U  &kp I      &kp O    &mt EQUAL P
-&mt LCTRL A   &kp S         &kp D         &kp F      &kp G      &trans                &kp MINUS            &kp H        &kp J  &kp K      &kp L    &mt SINGLE_QUOTE SEMI
+&mt LCTRL A   &kp S         &kp D         &kp F      &kp G      &trans                &close_quote         &kp H        &kp J  &kp K      &kp L    &mt SEMI MINUS
 &mt LSHIFT Z  &kp X         &kp C         &kp V      &kp B      &lt 4 LEFT_BRACKET    &lt 4 RIGHT_BRACKET  &kp N        &kp M  &kp COMMA  &kp DOT  &mt RIGHT_SHIFT FSLH
 &lt 5 ESCAPE  &kp LEFT_WIN  &kp LEFT_ALT  &kp LCTRL  &lt 2 TAB  &lt 1 SPACE           &kp BACKSPACE        &lt 1 ENTER                             &lt 5 BACKSLASH
             >;
