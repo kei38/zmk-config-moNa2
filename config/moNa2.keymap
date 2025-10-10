@@ -54,11 +54,7 @@
         close_quote: close_quote {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings =
-                <&macro_release>,
-                <&kp SINGLE_QUOTE &kp SINGLE_QUOTE>,
-                <&macro_wait_time 20>,
-                <&kp LEFT>;
+            bindings = <&macro_release>, <&kp SINGLE_QUOTE &kp SINGLE_QUOTE>;
 
             label = "CLOSE_QUOTE";
         };
