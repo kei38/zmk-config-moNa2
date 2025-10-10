@@ -30,14 +30,9 @@
             key-positions = <18 20>;
         };
 
-        quotation {
-            bindings = <&kp SINGLE_QUOTE>;
-            key-positions = <20 21>;
-        };
-
-        equal {
-            bindings = <&kp EQUAL>;
-            key-positions = <9 8>;
+        esc {
+            bindings = <&kp ESCAPE>;
+            key-positions = <0 1>;
         };
     };
 
@@ -61,7 +56,9 @@
             #binding-cells = <0>;
             bindings =
                 <&macro_release>,
-                <&kp SINGLE_QUOTE &kp SINGLE_QUOTE &kp LEFT>;
+                <&kp SINGLE_QUOTE &kp SINGLE_QUOTE>,
+                <&macro_wait_time 20>,
+                <&kp LEFT>;
 
             label = "CLOSE_QUOTE";
         };
@@ -92,10 +89,10 @@
 
         default_layer {
             bindings = <
-&kp Q         &kp W         &kp E         &kp R      &kp T                                                 &kp Y        &kp U  &kp I      &kp O    &mt EQUAL P
-&kp A         &kp S         &kp D         &kp F      &kp G      &trans                &close_quote         &kp H        &kp J  &kp K      &kp L    &mt SEMI MINUS
-&mt LSHIFT Z  &kp X         &kp C         &kp V      &kp B      &lt 4 LEFT_BRACKET    &lt 4 RIGHT_BRACKET  &kp N        &kp M  &kp COMMA  &kp DOT  &mt RIGHT_SHIFT FSLH
-&lt 5 ESCAPE  &kp LEFT_WIN  &kp LEFT_ALT  &kp LCTRL  &lt 2 TAB  &lt 1 SPACE           &kp BACKSPACE        &lt 1 ENTER                             &lt 5 BACKSLASH
+&kp Q         &kp W         &kp E         &kp R            &kp T                                                 &kp Y        &kp U  &kp I      &kp O    &mt EQUAL P
+&kp A         &kp S         &kp D         &kp F            &kp G      &trans                &close_quote         &kp H        &kp J  &kp K      &kp L    &mt SEMI MINUS
+&mt LSHIFT Z  &kp X         &kp C         &kp V            &kp B      &lt 4 LEFT_BRACKET    &lt 4 RIGHT_BRACKET  &kp N        &kp M  &kp COMMA  &kp DOT  &mt RIGHT_SHIFT FSLH
+&lt 5 LCTRL   &kp LEFT_WIN  &kp LEFT_ALT  &mt LANG1 LANG2  &lt 2 TAB  &lt 1 SPACE           &kp BACKSPACE        &lt 1 ENTER                             &lt 5 BACKSLASH
             >;
 
             sensor-bindings = <&scroll_up_down>;
@@ -103,10 +100,10 @@
 
         Fn-Cursor {
             bindings = <
-&kp F9  &kp F10  &kp F11  &kp F12  &trans                    &trans    &mkp MB4             &kp UP_ARROW     &mkp MB5   &trans
-&kp F5  &kp F6   &kp F7   &kp F8   &trans  &trans    &trans  &kp HOME  &kp LEFT             &kp DOWN_ARROW   &kp RIGHT  &kp END
-&kp F1  &kp F2   &kp F3   &kp F4   &trans  &trans    &trans  &trans    &kp C_AL_CALCULATOR  &kp PRINTSCREEN  &trans     &trans
-&trans  &trans   &trans   &trans   &trans  &trans    &trans  &trans                                                     &trans
+&kp F9  &kp F10  &kp F11  &kp F12  &trans                    &trans    &mkp MB4  &kp UP_ARROW     &mkp MB5   &trans
+&kp F5  &kp F6   &kp F7   &kp F8   &trans  &trans    &trans  &kp HOME  &kp LEFT  &kp DOWN_ARROW   &kp RIGHT  &kp END
+&kp F1  &kp F2   &kp F3   &kp F4   &trans  &trans    &trans  &trans    &mkp MB4  &kp PRINTSCREEN  &mkp MB5   &trans
+&trans  &trans   &trans   &trans   &trans  &trans    &trans  &trans                                          &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_DOWN C_VOLUME_UP>;
