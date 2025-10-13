@@ -15,21 +15,6 @@
     combos {
         compatible = "zmk,combos";
 
-        LeftClick {
-            bindings = <&mkp MB1>;
-            key-positions = <18 19>;
-        };
-
-        RightClick {
-            bindings = <&mkp MB2>;
-            key-positions = <19 20>;
-        };
-
-        MiddleClick {
-            bindings = <&mkp MB3>;
-            key-positions = <18 20>;
-        };
-
         esc {
             bindings = <&kp ESCAPE>;
             key-positions = <0 1>;
@@ -54,7 +39,10 @@
         close_quote: close_quote {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_release>, <&kp SINGLE_QUOTE &kp SINGLE_QUOTE>;
+            bindings =
+                <&kp SINGLE_QUOTE &kp SINGLE_QUOTE>,
+                <&macro_release>,
+                <&kp LEFT>;
 
             label = "CLOSE_QUOTE";
         };
